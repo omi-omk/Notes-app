@@ -1,3 +1,5 @@
+'use strict'
+
 let notes = getSavedNotes()
 
 const filters = 
@@ -24,13 +26,13 @@ document.querySelector('#create-note').addEventListener('click', function (e)
     location.assign(`/edit.html#${id}`)
 })
 
-document.querySelector('#search-text').addEventListener('input', function (e) 
+document.querySelector('#search-text').addEventListener('input', (e) =>
 {
     filters.searchText = e.target.value
     renderNotes(notes, filters)
 })
 
-document.querySelector('#filter-by').addEventListener('change', function (e) 
+document.querySelector('#filter-by').addEventListener('change', (e) =>
 {
     filters.sortBy = e.target.value
     renderNotes(notes, filters)
